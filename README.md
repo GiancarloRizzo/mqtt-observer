@@ -6,10 +6,10 @@ A python based mqtt-metric-provider for prometheus-export
 git clone https://github.com/GiancarloRizzo/mqtt-observer.git
 
 source bin/activate
-´´´
+```
 
 ## customize configuration in config.py
-´´´python
+```python
 # mqtt-defaults
 broker = localhost
 port   = 1883
@@ -25,20 +25,20 @@ topics = [
 scrape_destination = 'localhost' 
 scrape_port = 9630
 scrape_url = '/mqtt_metrics'
-´´´
+```
 
 ## start
-´´´bash
+```bash
 python3 mqtt-observer.py
-´´´
+```
 
 ## check via console if metrics are provided
-´´´bash
+```bash
 curl localhost:9630/mqtt_metrics
-´´´
+```
 
 ## add target to your prometheus-scrape-config
-´´´bash
+```bash
 # in /etc/prometheus/prometheus.yml you have to add:
 # scrape_configs:
 # previous scrape_targets
@@ -48,4 +48,4 @@ curl localhost:9630/mqtt_metrics
     static_configs:
     - targets:
       - localhost:9639
-´´´
+```
